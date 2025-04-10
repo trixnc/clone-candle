@@ -9,29 +9,41 @@ export default function Home() {
 
   // Define the tabs array
   const tabs = [
-    { name: 'Tab 1', icon: '+' },
-    { name: 'Tab 2', icon: '+' },
-    { name: 'Tab 3', icon: '+' },
+    { name: 'Candle Predictor', icon: '+' },
+    { name: 'Candle Signal', icon: '+' },
+    { name: 'News Impact Analyze', icon: '+' },
+    { name: 'Mr.Candle', icon: '+' },
   ];
 
   return (
     <Container>
-      <nav className="flex w-full space-x-6 h-20 justify-around items-center bg-white">
+      <nav className="bg-sky-50 flex w-full space-x-6 h-20 items-center">
         <img src="Frame 1261155751.png" alt="" className="h-11 w-11" />
         <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-3xl">
           IC Candle
         </h1>
-        <a href="#" className="flex text-gray-500 hover:text-blue-500 selection:text-blue-500">
+        <a href="#" className="flex font-bold text-gray-500 hover:text-blue-500 selection:text-blue-500">
           Home
         </a>
-        <a href="#" className="flex text-gray-500 hover:text-blue-500 selection:text-blue-500">
+        <a href="#" className="flex font-bold text-gray-500 hover:text-blue-500 selection:text-blue-500">
           Features
         </a>
-        <a href="#" className="flex text-gray-500 hover:text-blue-500 selection:text-blue-500">
+        <a href="#" className="flex font-bold text-gray-500 hover:text-blue-500 selection:text-blue-500">
           Pricing
         </a>
-        <button className="flex justify-center item-center w-25 border rounded-2xl bg-white cursor-pointer">
-          Get Started
+        <button className="flex justify-center item-center gap-2 px-4 py-2 rounded-full bg-white cursor-pointer ml-auto">
+        <svg width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.333984" y="0.666992" width="40.6667" height="40.6667" rx="20.3333" fill="url(#paint0_linear_20284_187)"/>
+<path d="M16.1484 16.4814L25.1855 25.5185M25.1855 25.5185V19.4938M25.1855 25.5185H19.1608" stroke="white" stroke-width="1.12963" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_20284_187" x1="39.7686" y1="21.0003" x2="1.56661" y2="21.6165" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4572D2"/>
+<stop offset="0.460497" stop-color="#263C60"/>
+<stop offset="0.975497" stop-color="#003F96"/>
+</linearGradient>
+</defs>
+</svg>
+          Book demo
         </button>
       </nav>
       <div className="py-12 px-4 text-center">
@@ -56,13 +68,13 @@ export default function Home() {
               onClick={() => setActiveTab(index)}
             >
              <span>{tab.icon}</span>
-              {/* {tab.name} */}
+              {tab.name}
             </button>
           ))}
         </div>
-        <div className="relative w-90% max-w-4xl h-25 bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="relative w-full max-w-4xl h-full bg-white rounded-xl shadow-lg overflow-hidden">
 
-  <div className="absolute top-0 left-0 w-0 h-0 border-t-3.125 border-t-blue-800 border-r-3.125 border-r-transparent z-10" />
+  <div className="absolute top-0 left-0 w-0 h-0 border-t-100 border-t-blue-800 border-r-100 border-r-transparent z-10" />
 
   <div className="p-8">
     <div className="mt-4">
