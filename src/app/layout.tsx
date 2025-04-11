@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body>
+      <body className="bg-[#ECF9FF]">
         <Header />
         <Starter />
         <Board />

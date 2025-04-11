@@ -1,7 +1,10 @@
-import styles from './styles/Container.module.css';
-
 import { ReactNode } from 'react';
+import cn from 'classnames';
 
-export default function Container({ children }: { children: ReactNode }) {
-  return <div className={styles.container}>{children}</div>;
+export default function Container({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <div className={cn('max-w-7xl mx-auto px-4 sm:px-6 lg:px-8', className)}>
+      {children}
+    </div>
+  );
 }
