@@ -5,9 +5,11 @@ export default function Frame() {
     return (
         <div>
             <Container>
-                <div className="w-full h-250 pt-5">
+                <div className="w-full h-250 pt-5 flex flex-col items-center justify-center">
                     <div className="flex items-center justify-center font-bold my-3">Trusted by teams at</div>
-                    <p className="flex items-center justify-center text-gray-400 my-5">More than 500,000 people across 60,000 companies are active with Reclaim</p>
+                    <p className="flex items-center justify-center text-gray-400 my-5 text-center">
+                        More than 500,000 people across 60,000 companies are active with Reclaim
+                    </p>
                     <div className="flex items-center justify-center my-1.5">
                         <img src="./icc/Star icon.svg" alt="" className="h-5 w-5 mx-2" />
                         <img src="./icc/Star icon-1.svg" alt="" className="h-5 w-5 mx-2" />
