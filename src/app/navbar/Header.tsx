@@ -8,55 +8,56 @@ import Container from "../components/Container";
 
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <Container>
-            <nav className="bg-sky-50 sticky top-0 w-full h-20 flex items-center z-50 shadow-md px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center">
-                    <Image
-                        src="/logo.png"
-                        alt="Logo"
-                        width={44}
-                        height={44}
-                        className="mr-3"
-                    />
-                    <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-2.5">
-                        IC Candle
-                    </h1>
-                </div>
+            <nav className="bg-sky-50 sticky top-0 w-full h-20 flex items-center z-50 px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center">
+                <Image
+                src="/logo.png"
+                alt="Logo"
+                width={44}
+                height={44}
+                className="mr-3"
+                />
+                <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-2.5">
+                IC Candle
+                </h1>
+            </div>
 
-                <div className="hidden sm:flex space-x-4">
-                    <Link
-                        href="#"
-                        className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        href="#"
-                        className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
-                    >
-                        Features
-                    </Link>
-                    <Link
-                        href="#"
-                        className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
-                    >
-                        Pricing
-                    </Link>
-                </div>
-
-                <button
-                    className="group relative flex items-center px-6 py-3 rounded-full bg-white cursor-pointer ml-auto hover:shadow-lg transition-all duration-500 ease-in-out space-x-2 overflow-hidden"
+            <div className="hidden sm:flex space-x-4">
+                <Link
+                href="#"
+                className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
+                >
+                Home
+                </Link>
+                <Link
+                href="#"
+                className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
+                >
+                Features
+                </Link>
+                <Link
+                href="#"
+                className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
+                >
+                Pricing
+                </Link>
+            </div>
+            <button
+                    className="group relative flex items-center px-6 py-3 rounded-full bg-white cursor-pointer ml-auto hover:shadow-lg transition-all duration-500 ease-in-out overflow-hidden"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
+                    {/* Background Animation */}
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-900 to-sky-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left z-10"></div>
 
-
+                    {/* Icon Animation */}
                     <motion.div
-                        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-blue-900 to-sky-600 z-20"
+                        className={`absolute top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-blue-900 to-sky-600 z-20 ${
+                            isHovered ? "left-auto right-4" : "left-4"
+                        }`}
                         animate={{
                             x: isHovered ? "100%" : "0%",
                             opacity: isHovered ? 1 : 0.8,
@@ -69,7 +70,7 @@ export default function Navbar() {
                     >
                         {isHovered ? (
                             <Image
-                                src="/icc/Frame 18.svg" 
+                                src="/icc/Frame 18.svg" // Arrow icon
                                 alt="Arrow Icon"
                                 width={40}
                                 height={40}
@@ -77,7 +78,7 @@ export default function Navbar() {
                             />
                         ) : (
                             <Image
-                                src="/icc/Frame 19.svg" 
+                                src="/icc/Frame 19.svg" // Circular icon
                                 alt="Circular Icon"
                                 width={40}
                                 height={40}
@@ -86,8 +87,11 @@ export default function Navbar() {
                         )}
                     </motion.div>
 
+                    {/* Text Animation */}
                     <motion.span
-                        className="relative z-30 font-bold text-gray-700 group-hover:text-white"
+                        className={`relative z-30 font-bold text-gray-700 group-hover:text-white ${
+                            isHovered ? "ml-auto mr-12" : "ml-12"
+                        }`}
                         animate={{
                             color: isHovered ? "#FFFFFF" : "#4B5563",
                             scale: isHovered ? 1.1 : 1,
@@ -97,7 +101,7 @@ export default function Navbar() {
                             ease: "easeInOut",
                         }}
                     >
-                        {isHovered ? "Start saving" : "Book Demo"}
+                        {isHovered ? "Start saving" : "Book a Demo"}
                     </motion.span>
                 </button>
             </nav>
