@@ -4,6 +4,7 @@ import Header from './navbar/Header';
 import Starter from './navbar/Starter';
 import Board from './navbar/Board';
 import Frame from './navbar/Frame';
+import Card1 from './navbar/Head';
 
 export const metadata = {
   title: 'clone',
@@ -22,6 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Starter />
         <Board />
         <Frame />
+        <Card1 />
         {children}
       </body>
     </html>

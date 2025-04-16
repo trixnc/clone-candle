@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import Container from "../components/Container";
 
 export default function Navbar() {
@@ -50,10 +50,8 @@ export default function Navbar() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    {/* Background Animation */}
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-900 to-sky-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left z-10"></div>
 
-                    {/* Icon Animation */}
                     <motion.div
                         className={`absolute top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-blue-900 to-sky-600 z-20 ${
                             isHovered ? "left-auto right-4" : "left-4"
@@ -70,27 +68,26 @@ export default function Navbar() {
                     >
                         {isHovered ? (
                             <Image
-                                src="/icc/Frame 18.svg" // Arrow icon
+                                src="/icc/Frame 18.svg"
                                 alt="Arrow Icon"
-                                width={40}
-                                height={40}
+                                width={36}
+                                height={36}
                                 className="m-auto"
                             />
                         ) : (
                             <Image
-                                src="/icc/Frame 19.svg" // Circular icon
+                                src="/icc/Frame 19.svg"
                                 alt="Circular Icon"
-                                width={40}
-                                height={40}
+                                width={36}
+                                height={36}
                                 className="m-auto"
                             />
                         )}
                     </motion.div>
 
-                    {/* Text Animation */}
                     <motion.span
                         className={`relative z-30 font-bold text-gray-700 group-hover:text-white ${
-                            isHovered ? "ml-auto mr-12" : "ml-12"
+                            isHovered ? "ml-auto mr-4" : "ml-4"
                         }`}
                         animate={{
                             color: isHovered ? "#FFFFFF" : "#4B5563",
