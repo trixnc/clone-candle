@@ -1,30 +1,24 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './globals.css';
-import Header from './navbar/Header';
-import Starter from './navbar/Starter';
-import Board from './navbar/Board';
-import Frame from './navbar/Frame';
-import Card1 from './navbar/Head';
+import Navbar from './Landing/Navbar'; // Ensure this path is correct
+import Footer from './Landing/Footer'; // Ensure this path is correct
 
 export const metadata = {
   title: 'clone',
   description: 'A starter layout for your application',
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body className="bg-[#ECF9FF]">
-        <Header />
-        <Starter />
-        <Board />
-        <Frame />
-        <Card1 />
-        {children}
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

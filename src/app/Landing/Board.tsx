@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Container from '../components/Container';
-import { Button } from "@/components/ui/button"
 import Image from "next/image";
 
 export default function Board() {
@@ -16,14 +15,7 @@ export default function Board() {
   ];
 
   const getVideoSrc = (index: number) => {
-    const videoPath = `/videos/tab-${index + 1}.mp4`;
-
-    try {
-      return new URL(videoPath, window.location.origin).toString();
-    } catch (error) {
-      console.error("Invalid video URL:", videoPath);
-      return "";
-    }
+    return `/videos/tab-${index + 1}.mp4`; // Simplified function
   };
 
   return (
@@ -40,7 +32,6 @@ export default function Board() {
               }`}
               onClick={() => setActiveTab(index)}
             >
-
               <Image
                 src={tab.icon}
                 alt={`${tab.name} Icon`}
@@ -48,22 +39,20 @@ export default function Board() {
                 height={20}
                 className="object-contain"
               />
-
               {tab.name}
             </button>
           ))}
         </div>
         <div className="relative w-full h-full bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="absolute top-0 left-0 w-0 h-0 border-t-100 border-t-blue-800 border-r-100 border-r-transparent z-10" />
           <div className="p-8">
             <div className="mt-4">
               <video
                 className="w-full h-full rounded-lg"
-                src={getVideoSrc(activeTab)}
+                src={getVideoSrc(activeTab)} // Use the updated function
                 autoPlay
                 loop
                 muted
-                controls={false}
+                controls // Add controls for debugging
               />
             </div>
           </div>
