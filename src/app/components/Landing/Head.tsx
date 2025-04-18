@@ -1,8 +1,9 @@
 import React from "react";
-import Container from "../components/Container";
+import Container from "../Container";
 
 export default function Title() {
   return (
+    <Container>
       <div>
           <div className="pt-20 w-full text-center space-x-3 items-center justify-center ">
               <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-3xl font-bold  ">Train Your AI {" "}</h1>
@@ -12,5 +13,6 @@ export default function Title() {
               <p className="mt-2 text-neutral-500">Backtest, analyze, and track the market with intelligent tools</p>
           </div>
       </div>
+      </Container>
   );
 } 

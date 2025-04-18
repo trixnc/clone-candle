@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Container from "../components/Container";
+import Container from "../Container";
 
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);

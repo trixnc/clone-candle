@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Container from '../components/Container';
+import Container from '../Container';
 import Image from "next/image";
 
 export default function Board() {
@@ -15,7 +15,7 @@ export default function Board() {
   ];
 
   const getVideoSrc = (index: number) => {
-    return `/videos/tab-${index + 1}.mp4`; // Simplified function
+    return `/videos/tab-${index + 1}.mp4`;
   };
 
   return (
@@ -48,11 +48,10 @@ export default function Board() {
             <div className="mt-4">
               <video
                 className="w-full h-full rounded-lg"
-                src={getVideoSrc(activeTab)} // Use the updated function
+                src={getVideoSrc(activeTab)}  
                 autoPlay
                 loop
                 muted
-                controls // Add controls for debugging
               />
             </div>
           </div>
