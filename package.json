@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
+    "@tailwindcss/vite": "^4.1.4",
+    "autoprefixer": "^10.4.21",
     "bun": "^1.2.8",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
@@ -19,6 +21,7 @@
     "lucide-react": "^0.487.0",
     "next": "15.2.4",
     "next-intl": "^4.0.2",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "swr": "^2.3.3",
@@ -33,7 +36,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.1.4",
     "typescript": "^5"
   }
 }

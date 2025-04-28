@@ -11,7 +11,7 @@ export default function Navbar() {
 
     return (
         <Container>
-            <nav className="bg-sky-50 sticky top-0 w-full h-20 flex items-center z-50 px-4 sm:px-6 lg:px-8">
+            <nav className="bg-sky-50 sticky top-0 w-full h-25 flex items-center z-50 px-4 sm:px-6 lg:px-8 border rounded-4xl">
             <div className="flex items-center">
                 <Image
                 src="/logo.png"
@@ -20,7 +20,7 @@ export default function Navbar() {
                 height={44}
                 className="mr-3"
                 />
-                <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-2.5">
+                <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-7">
                 IC Candle
                 </h1>
             </div>

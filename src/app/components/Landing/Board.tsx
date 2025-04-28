@@ -20,12 +20,12 @@ export default function Board() {
 
   return (
     <Container>
-      <div className="flex flex-col items-center pt-10">
-        <div className="flex gap-2 bg-white p-2 rounded-xl shadow-md mb-4">
+      <div className="flex flex-col items-center pt-20">
+        <div className="flex gap-2 bg-white p-5 rounded-xl border">
           {tabs.map((tab, index) => (
             <button
               key={index}
-              className={`px-4 py-2 rounded-lg border text-sm font-medium flex items-center gap-2 ${
+              className={`px-15 py-10 rounded-lg border text-xl font-medium flex items-center gap-2 ${
                 activeTab === index
                   ? "bg-blue-100 border-blue-500 text-blue-700"
                   : "bg-white border-gray-200 text-gray-600"
@@ -43,7 +43,7 @@ export default function Board() {
             </button>
           ))}
         </div>
-        <div className="relative w-full h-full bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="relative w-full h-full bg-white rounded-xl border overflow-hidden">
           <div className="p-8">
             <div className="mt-4">
               <video
