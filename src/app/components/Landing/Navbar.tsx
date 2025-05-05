@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -8,44 +8,54 @@ import Container from "../Container";
 
 export default function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <Container>
-            <nav className="bg-sky-50 sticky top-0 w-full h-25 flex items-center z-50 px-4 sm:px-6 lg:px-8 border rounded-4xl">
-            <div className="flex items-center">
-                <Image
-                src="/logo.png"
-                alt="Logo"
-                width={44}
-                height={44}
-                className="mr-3"
-                />
-                <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-7">
-                IC Candle
-                </h1>
-            </div>
+            <nav
+                className={`sticky top-0 w-full h-25 flex items-center z-50 px-4 sm:px-6 lg:px-3 border rounded-2xl transition-all duration-300 ${
+                    isScrolled ? "bg-sky-50" : "bg-transparent"
+                }`}
+            >
+                <div className="flex items-center">
+                    <Image
+                        src="/logo.png"
+                        alt="Logo"
+                        width={44}
+                        height={44}
+                        className="mr-3"
+                    />
+                    <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-7">
+                        IC Candle
+                    </h1>
+                </div>
 
-            <div className="hidden sm:flex space-x-4">
-                <Link
-                href="#"
-                className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
-                >
-                Home
-                </Link>
-                <Link
-                href="#"
-                className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
-                >
-                Features
-                </Link>
-                <Link
-                href="#"
-                className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
-                >
-                Pricing
-                </Link>
-            </div>
-            <button
+                <div className="hidden sm:flex space-x-4">
+                    <Link
+                        href="#"
+                        className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
+                    >
+                        Features
+                    </Link>
+                    <Link
+                        href="#"
+                        className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
+                    >
+                        Pricing
+                    </Link>
+                </div>
+                <button
                     className="group relative flex items-center px-6 py-3 rounded-full bg-white cursor-pointer ml-auto hover:shadow-lg transition-all duration-500 ease-in-out overflow-hidden"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
@@ -98,7 +108,7 @@ export default function Navbar() {
                             ease: "easeInOut",
                         }}
                     >
-                        {isHovered ? "Start saving" : "Book a Demo"}
+                        {isHovered ? "Sign in" : "Try Now"}
                     </motion.span>
                 </button>
             </nav>

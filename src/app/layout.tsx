@@ -3,10 +3,10 @@ import './globals.css';
 import Navbar from '@/app/components/Landing/Navbar';
 import Footer from '@/app/components/Landing/Footer';
 import Board from '@/app/components/Landing/Board';
-import Head from '@/app/components/Landing/Head';
-import Frame from '@/app/components/Landing/Frame';
+import Information from '@/app/components/Landing/information';
 import Started from '@/app/components/Landing/Starter';
-import Sponser from '@/app/components/Landing/Sponser';
+import Intro from './components/Landing/intro';
+
 
 export const metadata = {
   title: "IC Candle Clone",
@@ -29,9 +29,8 @@ export default function Layout({ children }: { children: ReactNode }) {
           {/* Example usage of imported components */}
           <Started />
           <Board />
-          <Frame />
-          <Sponser />
-          <Head />
+          <Information />
+          <Intro />
           {children}
         </main>
         <footer className="mt-auto">
