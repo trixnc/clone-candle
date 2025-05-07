@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "../Container";
 
-export default function Navbar() {
+export const Navbar = (): React.ReactElement => {
     const [isHovered, setIsHovered] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -36,20 +36,20 @@ export default function Navbar() {
                         height={44}
                         className="mr-3"
                     />
-                    <h1 className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-7">
+                    <a href="/#" className="bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 inline-block text-transparent bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold mr-7">
                         IC Candle
-                    </h1>
+                    </a>
                 </div>
 
                 <div className="hidden sm:flex space-x-4">
                     <Link
-                        href="#"
+                        href="/FeaturesPage"
                         className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
                     >
                         Features
                     </Link>
                     <Link
-                        href="#"
+                        href="/Pricing"
                         className="font-bold text-gray-500 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-900 hover:via-slate-900 hover:to-sky-600 bg-clip-text transition-all duration-300"
                     >
                         Pricing

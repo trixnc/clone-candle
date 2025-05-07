@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const IntroSection = ({
+export const IntroSection = ({
   reverse,
   showHeading,
   heading,
@@ -66,7 +66,7 @@ const IntroSection = ({
   );
 };
 
-const Intro = () => {
+export const Intro = () => {
   return (
     <div>
       <IntroSection
@@ -110,5 +110,3 @@ const Intro = () => {
     </div>
   );
 };
-
-export default Intro;

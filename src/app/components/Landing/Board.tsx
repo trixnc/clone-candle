@@ -4,7 +4,7 @@ import React from 'react';
 import Container from '../Container';
 import Image from "next/image";
 
-export default function Board() {
+export function Board() {
   const [activeTab, setActiveTab] = React.useState(0);
 
   const tabs = [
@@ -47,7 +47,7 @@ export default function Board() {
 
         {/* Video Section */}
         <div className="relative w-full max-w-4xl bg-white rounded-xl border overflow-hidden">
-          <div className="p-8">
+          <div className="p-8"> 
             <video
               className="w-full h-auto rounded-lg"
               src={getVideoSrc(activeTab)}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-export default function Title() {
+export const Starter = () => {
   return (
       <div className="container mx-auto flex flex-col items-center justify-center">
           <div className="pt-15 w-full text-center space-x-3 flex items-center justify-center text-5xl font-semibold">

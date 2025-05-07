@@ -1,12 +1,6 @@
 import React, { ReactNode } from 'react';
 import './globals.css';
-import Navbar from '@/app/components/Landing/Navbar';
-import Footer from '@/app/components/Landing/Footer';
-import Board from '@/app/components/Landing/Board';
-import Information from '@/app/components/Landing/information';
-import Started from '@/app/components/Landing/Starter';
-import Intro from './components/Landing/intro';
-
+import { Navbar, Footer } from './components/Navbar';
 
 export const metadata = {
   title: "IC Candle Clone",
@@ -26,14 +20,9 @@ export default function Layout({ children }: { children: ReactNode }) {
           <Navbar />
         </header>
         <main className="flex-grow">
-          {/* Example usage of imported components */}
-          <Started />
-          <Board />
-          <Information />
-          <Intro />
           {children}
         </main>
-        <footer className="mt-auto">
+        <footer>
           <Footer />
         </footer>
       </body>
