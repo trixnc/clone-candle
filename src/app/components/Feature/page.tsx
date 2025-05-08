@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Pricing } from "./Pricing";
+import { FeaturePage } from "./Features";
 
 const Page = () => {
-  return <Pricing />;
+  return <FeaturePage />;
 };
 
 export default Page;
