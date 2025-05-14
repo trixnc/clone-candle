@@ -23,7 +23,7 @@ export const Navbar = (): React.ReactElement => {
     return (
         <Container>
             <nav
-                className={`sticky top-0 w-full h-25 flex items-center z-50 px-4 sm:px-6 lg:px-3 border rounded-2xl transition-all duration-300 ${
+                className={`container sticky top-0 w-full h-25 flex items-center z-50 px-2 sm:px-6 lg:px-3 border rounded-2xl transition-all duration-300 ${
                     isScrolled ? "bg-sky-50" : "bg-transparent"
                 }`}
             >

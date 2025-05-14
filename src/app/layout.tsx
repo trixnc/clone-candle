@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
 import './globals.css';
 import { Navbar, Footer } from './components/Navbar';
+import Features from './components/Feature/page';
+import Pricing from './components/Pricing/Page';
 
 export const metadata = {
   title: "IC Candle Clone",
@@ -20,6 +22,8 @@ export default function Layout({ children }: { children: ReactNode }) {
           <Navbar />
         </header>
         <main className="flex-grow">
+          <Features />
+          {/* <Pricing /> */}
           {children}
         </main>
         <footer>
