@@ -23,7 +23,7 @@ export const Navbar = (): React.ReactElement => {
     return (
         <Container>
             <nav
-                className={`container sticky top-0 w-full h-25 flex items-center z-50 px-2 sm:px-6 lg:px-3 border rounded-2xl transition-all duration-300 ${
+                className={`container sticky top-0 w-full h-25 flex items-center z-50 px-2 sm:px-6 lg:px-3 rounded-2xl transition-all duration-300 ${
                     isScrolled ? "bg-sky-50" : "bg-transparent"
                 }`}
             >
@@ -61,7 +61,7 @@ export const Navbar = (): React.ReactElement => {
                 </div>
                 {/* Button Section */}
 <button
-  className="group relative flex items-center px-6 py-3 rounded-full bg-white cursor-pointer ml-auto hover:shadow-lg transition-all duration-500 ease-in-out overflow-hidden"
+  className="group relative flex items-center px-7 py-3 rounded-full bg-white cursor-pointer ml-auto hover:shadow-lg transition-all duration-500 ease-in-out overflow-hidden"
   onMouseEnter={() => setIsHovered(true)}
   onMouseLeave={() => setIsHovered(false)}
 >
@@ -69,13 +69,27 @@ export const Navbar = (): React.ReactElement => {
   <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-900 to-sky-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left z-0"></div>
 
   {/* "Try now" Button */}
-  <span
-    className={`px-3 text-lg transition-all duration-500 z-20 ${
-      isHovered ? "opacity-0 -translate-x-[20px]" : "opacity-100 translate-x-0"
+<span
+    className={`relative flex items-center justify-center px-3 text-lg transition-all duration-500 z-20 ${
+        isHovered ? "opacity-0 translate-x-[20px]" : "opacity-100 translate-x-0"
     }`}
-  >
+>
     Try now
-  </span>
+    <span
+        className="absolute right-17 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="white"
+            className="w-6 h-6"
+        >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+    </span>
+</span>
 
   {/* "Sign in" Button */}
   <span

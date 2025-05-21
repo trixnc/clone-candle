@@ -1,6 +1,5 @@
 import { IconEye, IconBook, IconUser, IconChartBar, IconBell } from "@tabler/icons-react";
 import { FC } from "react";
-import { cn } from "@/lib/utils";
 
 export const features = [
   {
@@ -29,11 +28,6 @@ export const features = [
     description: "Access tools designed for both beginners and experienced traders.",
   },
   {
-    icon: <IconEye className="h-6 w-6 text-blue-600" />,
-    title: "AI-Powered Impact Analysis",
-    description: "Predict market impact through news and economic data.",
-  },
-  {
     icon: <IconBook className="h-6 w-6 text-blue-600" />,
     title: "Backtesting Made Easy",
     description: "Test and validate your strategies with historical data.",
@@ -45,21 +39,7 @@ export const features = [
   },
 ];
 
-const Information = () => {
-  return <FeatureGrid features={features} />;
-};
-
-interface Feature {
-  icon: React.ReactElement;
-  title: string;
-  description: string;
-}
-
-interface FeatureGridProps {
-  features: Feature[];
-}
-
-const FeatureGrid: FC<FeatureGridProps> = ({ features }) => {
+const Information: FC = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <h2 className="text-center bg-gradient-to-r from-blue-900 via-slate-900 to-sky-600 text-transparent bg-clip-text font-bold text-4xl">
@@ -70,14 +50,7 @@ const FeatureGrid: FC<FeatureGridProps> = ({ features }) => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-x divide-y border border-gray-200 rounded-lg overflow-hidden">
         {features.map((feature, index) => (
-          <div
-            key={index}
-            className={cn(
-              "flex flex-col gap-2 p-6",
-              "even:border-l",
-              "bg-white"
-            )}
-          >
+          <div key={index} className="flex flex-col gap-2 p-6 bg-white">
             <div>{feature.icon}</div>
             <h3 className="font-semibold text-lg">{feature.title}</h3>
             <p className="text-gray-500 text-sm">{feature.description}</p>
@@ -88,4 +61,4 @@ const FeatureGrid: FC<FeatureGridProps> = ({ features }) => {
   );
 };
 
-export default FeatureGrid;
+export default Information;

@@ -1,6 +1,9 @@
+
 import React, { ReactNode } from 'react';
 import './globals.css';
 import { Navbar, Footer } from './components/Navbar';
+import { Board, Starter, Intro, Sponser, SlideCard } from './components/Landing';
+import Information from './components/Landing/information';
 import Features from './components/Feature/page';
 import Pricing from './components/Pricing/Page';
 
@@ -22,8 +25,14 @@ export default function Layout({ children }: { children: ReactNode }) {
           <Navbar />
         </header>
         <main className="flex-grow">
-          <Features />
-          {/* <Pricing /> */}
+          {/* {/* <Features /> */}
+          {/* // <Pricing /> */}
+          <Starter />
+          <Board />
+          <Sponser />
+          <Information />
+          <Intro />
+          <SlideCard />
           {children}
         </main>
         <footer>
